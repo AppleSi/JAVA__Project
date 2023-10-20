@@ -1,0 +1,118 @@
+body{
+    background-color: whitesmoke;
+}
+/* Navigation */
+.nav {
+    margin: 30px 0;
+    height: 60px;
+    text-align: center;
+    background-color: #151313;
+    color: white;
+}
+
+.nav_in {
+    width: 100%;
+    max-width: 940px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: flex-start;
+}
+.nav_link_main{
+    text-decoration: none;
+
+    font-size: 20px;
+    font-family: "Arial";
+    font-weight: bold;
+    color: rgb(235, 235, 235);
+    line-height: 1.2;
+
+    margin-top: 18px;
+    margin-right: 50px;
+}
+
+.nav_link {
+    text-decoration: none;
+
+    font-size: 16px;
+    font-family: "Arial";
+    font-weight: bold;
+    color: white;
+    text-transform: uppercase;
+    line-height: 1.2;
+
+    margin-top: 22px;
+    margin-right: 30px;
+}
+
+.nav_link:hover {
+    color: #d55355;
+}
+
+.nav_link_main:hover {
+    color: #d55355;
+}
+
+/* Content */
+
+.container1 {
+    width: 100%;
+    max-width: 940px;
+    margin: 0 auto;
+}
+
+
+.card_wrap {
+    width: 100%;
+    max-width: 600px;
+    margin-top: 20px;
+    background-image: url(../img/gradient_bg.png);
+    background-repeat: no-repeat; background-size: cover;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-around;
+    box-shadow: 10px 10px 5px lightblue;
+}
+
+.stud_img_left {
+    margin: 10px 0px;
+}
+
+.stud_info {
+    margin: 10px 0px;
+}
+
+.stud_name {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.stud_age {
+    font-size: 16px;
+}
+
+.stud_uni_info {
+    font-size: 16px;
+    margin-bottom: 30px;
+}
+
+.more_info {
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+    color: #d55355;
+}
+
+.more_info:hover {
+    color: #b307e3;
+}
+
+.img_full_body {
+    float: left;
+    margin-right: 20px;
+}
+
+.upp_form {
+    margin-top: 10px;
+    max-width: 224px;
+    align-content: center;
+}

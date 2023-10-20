@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome</title>
+
+    <link rel="stylesheet" href="" th:href="@{/css/bootstrap.min.css}" />
+    <link rel="stylesheet" href="" th:href="@{/css/style.css}" />
+</head>
+<body>
+
+<nav class="nav">
+    <div class="nav_in">
+        <a class="nav_link_main" style="color: red" th:href="@{/}">Stud&Uni</a>
+        <a class="nav_link" th:href="@{/students}">All Students</a>
+        <a class="nav_link" th:href="@{/student-create}">Add Student</a>
+        <a class="nav_link"  th:href="@{/books}">All Books</a>
+    </div>
+</nav>
+
+<div class="container1">
+    <h1>Welcome to the Web Library App!</h1>
+</div>
+</body>
+</html>

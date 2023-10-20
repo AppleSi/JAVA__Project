@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<meta charset="UTF-8">
+<title>Update Student</title>
+<link rel="stylesheet" href="" th:href="@{/css/bootstrap.min.css}"/>
+<link rel="stylesheet" href="" th:href="@{/css/style.css}"/>
+</head>
+<body>
+<hr/>
+<div class="container1">
+    <form action="#" th:action="@{/student-update}" th:object="${student}" method="post">
+        <label for="stud_id">ID</label>
+        <input readonly type="number" th:field="*{stud_id}" id="stud_id" placeholder="ID">
+        <br/>
+        <label for="stud_name">First name</label>
+        <input type="text" th:field="*{stud_name}" id="stud_name" placeholder="Name">
+        <br/>
+        <label for="stud_surname">Surname</label>
+        <input type="text" th:field="*{stud_surname}" id="stud_surname" placeholder="Surname">
+        <br/>
+        <label for="stud_age">Age</label>
+        <input type="number" th:field="*{stud_age}" id="stud_age" placeholder="Age">
+        <br/>
+        <label for="stud_gender">Gender</label>
+        <input type="text" th:field="*{stud_gender}" id="stud_gender" placeholder="Gender">
+        <br/>
+        <label for="university">University</label>
+        <input type="text" th:field="*{university}" id="university" placeholder="University">
+        <br/>
+        <label for="stud_gpa">GPA</label>
+        <input type="number" th:field="*{stud_gpa}" id="stud_gpa" placeholder="GPA">
+        <br/>
+        <button class="btn btn-primary">Update Student</button>
+    </form>
+</div>
+<hr/>
+
+
+</body>
+</html>

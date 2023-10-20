@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Student</title>
+    <link rel="stylesheet" href="" th:href="@{/css/bootstrap.min.css}" />
+    <link rel="stylesheet" href="" th:href="@{/css/style.css}" />
+</head>
+<body>
+
+<nav class="nav">
+    <div class="nav_in">
+        <a class="nav_link_main" th:href="@{/}">Stud&Uni</a>
+        <a class="nav_link" th:href="@{/students}">All Students</a>
+        <a class="nav_link" style="color: red;" th:href="@{/student-create}">Add Student</a>
+        <a class="nav_link"  th:href="@{/books}">All Books</a>
+    </div>
+</nav>
+
+<div class="container1"><br>
+    <h3>Add New Student</h3><br>
+
+    <form class="upp_form" action="#" th:action="@{/student-create}" th:object="${student}" method="post">
+
+        NAME: <br><input type="text" th:field="*{stud_name}" id="stud_name" placeholder="Name"><br>
+        SURNAME: <br><input type="text" th:field="*{stud_surname}" id="stud_surname" placeholder="Surname"><br>
+        AGE: <br><input type="text" th:field="*{stud_age}" id="stud_age" placeholder="Age"><br>
+        GENDER: <br><select class="form-select" th:field="*{stud_gender}" >
+                <option value="Female">Female</option>
+                <option value="Male">Male</option>
+            </select><br>
+        UNIVERSITY: <br><input type="text" th:field="*{university}" id="university" placeholder="University"><br>
+        GPA: <br><input type="text" th:field="*{stud_gpa}" id="stud_gpa" placeholder="GPA"><br><br><br>
+
+        <button class="btn btn-danger"> + ADD NEW STUDENT</button>
+    </form>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Show</title>
+    <link rel="stylesheet" href="" th:href="@{/css/bootstrap.min.css}" />
+    <link rel="stylesheet" href="" th:href="@{/css/style.css}" />
+</head>
+<body>
+
+<nav class="nav">
+    <div class="nav_in">
+        <a class="nav_link_main" th:href="@{/}">Stud&Uni</a>
+        <a class="nav_link" th:href="@{/students}">All Students</a>
+        <a class="nav_link" th:href="@{/student-create}">Add Student</a>
+        <a class="nav_link"  th:href="@{/books}">All Books</a>
+    </div>
+</nav>
+
+<div class="container1">
+
+    <img class="img_full_body" src="" th:if="${student.stud_gender} == 'Female'" th:src="@{/img/maai1.png}"
+         alt="Student" width="180" height="345" />
+
+    <img class="img_full_body" src="" th:unless="${student.stud_gender} == 'Female'" th:src="@{/img/ayanokoji.png}"
+         alt="Student" width="180" height="345" />
+
+    <div class="stud_info">
+        <div class="stud_name"><span th:text="${student.stud_name}"></span>
+                            <span th:text="${student.stud_surname}"></span></div>
+        <div class="stud_age">Age: <span th:text="${student.stud_age}"></span>, <span th:text="${student.stud_gender}"></span></div>
+        <div class="stud_age">GPA is <b><span th:text="${student.stud_gpa}"></span></b></div><br>
+        <div class="stud_uni_info">Studying at <b><span th:text="${student.university}"></span></b> and learn something</div>
+
+        <h4>Books: </h4>
+        <div th:each="book : ${student.books}">
+            <div class="stud_name"><span th:text="${book.book_id} + '.'"></span>
+                <span th:text="${book.book_name}"></span></div>
+        </div>
+
+
+        <a class="btn btn-success" th:href="@{/students/{id}/edit(id=${student.getStud_id()})}">Edit</a>
+
+        <form th:method="POST" th:action="@{/students/delete/{id}(id=${student.getStud_id()})}">
+            <button class="btn-danger">DELETE</button>
+        </form>
+    </div><br><hr>
+
+
+    <h3>Add New Book</h3><br>
+
+    <form class="upp_form" action="#" th:action="@{/book-create/{id}(id=${student.getStud_id()})}"  method="post">
+
+        BOOK NAME: <input type="text" id="book_name" placeholder="Book Name"><br>
+        <button class="btn btn-danger"> + ADD NEW BOOK</button>
+    </form>
+
+
+
+</div>
+
+</body>
+</html>

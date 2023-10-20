@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Books</title>
+
+    <link rel="stylesheet" href="" th:href="@{/css/bootstrap.min.css}" />
+    <link rel="stylesheet" href="" th:href="@{/css/style.css}" />
+</head>
+<body>
+
+<nav class="nav">
+    <div class="nav_in">
+        <a class="nav_link_main" th:href="@{/}">Stud&Uni</a>
+        <a class="nav_link" th:href="@{/students}">All Students</a>
+        <a class="nav_link" th:href="@{/student-create}">Add Student</a>
+        <a class="nav_link" style="color: red" th:href="@{/books}">All Books</a>
+    </div>
+</nav>
+
+<div class="container1">
+
+    <div class="card_wrap" th:each="book : ${books}">
+        <div class="stud_img_left">
+            <h2>books</h2>
+
+        </div>
+
+        <div class="stud_info">
+            <div>
+                <div class="stud_name"><span th:text="${book.book_id}"></span>
+                    <span th:text="${book.book_name}"></span></div>
+                <div class="stud_age">Stud_id: <span th:text="${book.student.stud_id}"></span></div>
+                <div class="stud_age">Student name: <span th:text="${book.student.stud_name}"></span></div>
+
+                <a class="more_info" th:href="@{/books}">More Info</a>
+
+            </div>
+
+        </div>
+
+    </div><hr/>
+
+
+
+
+</div>
+
+
+</div>
+</body>
+</html>

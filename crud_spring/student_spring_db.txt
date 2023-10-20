@@ -1,0 +1,39 @@
+CREATE TABLE Students(
+stud_id bigint NOT NULL GENERATED ALWAYS AS IDENTITY,
+stud_name varchar(20) NOT NULL,
+stud_surname varchar(20) NOT NULL,
+stud_age int NOT NULL,
+stud_gender varchar(20) NOT NULL,
+university varchar(20) NOT NULL,
+stud_gpa float NOT NULL,
+PRIMARY KEY (stud_id)
+);
+
+INSERT INTO Students ( stud_name, stud_surname, stud_age, stud_gender, university, stud_gpa)
+VALUES ('Zhasulan', 'Beishenbai', 19, 'Male', 'IITU', 3.1),
+       ('Aisulu', 'Bakytzhan', 20, 'Female', 'KBTU', 2.8),
+       ('Zhansaya', 'Orynbasar', 19, 'Female', 'KazNU', 3.4),
+       ('Darkhan', 'Kozhamurat', 18, 'Male', 'ATU', 2.6),
+       ('Aldiar', 'Zhenisbai', 19, 'Male', 'UIB', 3.0);
+
+
+CREATE TABLE Books(
+book_id bigint NOT NULL GENERATED ALWAYS AS IDENTITY,
+book_name varchar(20) NOT NULL,
+stud_id int NOT NULL,
+PRIMARY KEY (book_id),
+FOREIGN KEY (stud_id) REFERENCES Students(stud_id));
+);
+
+INSERT INTO Books ( book_name, stud_id)
+VALUES ('Thinking in Java', 1),
+		('C++ beginners', 1),
+		('Robinzon Cruzo', 2),
+		('Romeo and Julieta', 3),
+		('Harry Potter', 4);
+
+
+
+
+
+

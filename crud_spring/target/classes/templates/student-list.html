@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Students</title>
+
+    <link rel="stylesheet" href="" th:href="@{/css/bootstrap.min.css}" />
+    <link rel="stylesheet" href="" th:href="@{/css/style.css}" />
+</head>
+<body>
+
+<nav class="nav">
+    <div class="nav_in">
+        <a class="nav_link_main" th:href="@{/}">Stud&Uni</a>
+        <a class="nav_link" style="color: red" th:href="@{/students}">All Students</a>
+        <a class="nav_link" th:href="@{/student-create}">Add Student</a>
+        <a class="nav_link"  th:href="@{/books}">All Books</a>
+    </div>
+</nav>
+
+<div class="container1">
+
+    <div class="card_wrap" th:each="student : ${students}">
+        <div class="stud_img_left">
+            <img src="" th:if="${student.stud_gender} == 'Female'" th:src="@{/img/mai.png}"
+                  alt="Student" width="118" height="118" />
+
+            <img src="" th:unless="${student.stud_gender} == 'Female'" th:src="@{/img/ayano.png}"
+                 alt="Student" width="118" height="118" />
+
+        </div>
+
+        <div class="stud_info">
+            <div>
+                <div class="stud_name"><span th:text="${student.stud_name}"></span>
+                    <span th:text="${student.stud_surname}"></span></div>
+                <div class="stud_age">Age: <span th:text="${student.stud_age}"></span>,
+                    <span th:text="${student.stud_gender}"></span></div>
+                <div class="stud_uni_info">Studying at <b><span th:text="${student.university}"></span></b> and learn something</div>
+
+                <a class="more_info" th:href="@{/students/{id}/show(id=${student.getStud_id()})}">More Info</a>
+
+            </div>
+
+        </div>
+
+        </div>
+    </div>
+
+
+</div>
+</body>
+</html>
